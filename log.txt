@@ -1,0 +1,55 @@
+commit 604964ce2a86d20c0a4a0b4e391739a0d3ddfaf6
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Fri Oct 20 12:01:53 2017 -0400
+
+    Implemented part B using the format defined on the assignment. Some
+    issues occured with compiling at first. Some issue with accessing
+    data with the pointer, had to change it to a reference.
+    
+    Need to make a user level program to test that this actually works
+    properly.
+
+commit f7f4290fdea9e1638defbe1deb1e921c144ca968
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Fri Oct 20 08:53:37 2017 -0400
+
+    I'm not sure exactly what I changed, but it works. I'm not even
+    going to try and figure out why, just take it for granted and
+    continue with partB. It's already late as is, need to get it done
+    so I can start partC.
+
+commit b0465251b00003c2211a9eea3f2f0347714d5f88
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Thu Oct 19 10:09:56 2017 -0400
+
+    Files modified since restoring kernel to original state. Implemented
+    a simple hello world system call. Kernel compiles successfully, but
+    the hello world message does not appear in log file. Not sure how to
+    alter the program to make it work, kind of stuck here.
+    
+    Going to attempt Part C of the assignment and will hopefully make
+    some progress with that. Need to come back to finish Part B.
+
+commit 80b596a96c361b7038c4ab11c78aa502e1db17f9
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Thu Oct 12 11:27:40 2017 -0400
+
+    Compiled kernel. Added modules. Installed modules. Performed make install. Booted into new kernel.
+
+commit 51265933a932955b9f230f574bb5985276821810
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Thu Oct 12 10:41:05 2017 -0400
+
+    Unpacked linux kernel. No not yet compiled. No additonal changes made.
+
+commit 2bc6b7cdbfccc76829de6b92fd0fd5407bbeed82
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Thu Oct 12 10:35:35 2017 -0400
+
+    Tar file of the linux kernel. Nothing else additional.
+
+commit bddd53ca93fb5af365f6dca1493e572f270132f7
+Author: CrazyWonton <kevintarc13@gmail.com>
+Date:   Thu Oct 12 10:31:59 2017 -0400
+
+    Initial commit
