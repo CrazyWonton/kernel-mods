@@ -1,0 +1,126 @@
+commit 2c6cec360917be027f4543a49585d033cea14ec6
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Tue Oct 24 15:27:39 2017 -0400
+
+    After changing the init_module() so that it returns -1, I can't install
+    or uninstall my module. So my thinking is that by changing it to return
+    -1 after it installs, it will get put into the /dev folder and install
+    properly but it will say to the kernel that it didn't install. This
+    contradiction makes the system think it didn't install but it actually
+    did. I wouldn't recoomend doing this becuase I can't get my module to
+    work now.
+
+commit 8cf95d436d79e4e4e7e2a8638dfee74eb1a3a8d9
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Tue Oct 24 15:05:12 2017 -0400
+
+    Modified modcall to compare times. I noticed that current kernel time
+    is way off in some cases. It looks like it only updates after a certain
+    amount of time, such that in a given window of time current_kernel_time
+    will return the same value while getnstimeofday will return updated values.
+    
+    I looked into it and it seems like getnstimeofday asks the hardware
+    what fraction of the jiffy has elapsed while current_kernel_time
+    must depend on the whole jiffy. Similar to integers and floats.
+    
+    This explaination is parralel with my observation from the user level
+    program.
+    
+    The user level current_kernel_time was very similar to that of the
+    kernel level current_kernel_time. I suspect that the user level
+    command issues a system call to the kernel to get the value.
+
+commit 4256841b7236735051002affef34b0ca889e605c
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Tue Oct 24 12:37:52 2017 -0400
+
+    YAHOOOOOO!!!!! I finally got it to work!!!!!!! All I needed to do
+    was add the read function to the list of the module's functionality.
+
+commit f1c33cc8f688921ccf3640e520c4f10fe9a8db9b
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Tue Oct 24 09:10:50 2017 -0400
+
+    SOOOOO its like 2 days late now...but I'm really close. I made the
+    driver support the read function and output the two times. Also,
+    I made a user level program that opens the character device and reads
+    from it.
+    
+    Both programs run individually but together, not so much. I think
+    it is an issue with the sprintf or something.
+
+commit f534aad606ec9b56697e8cc663b9dd8cd962f05b
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Mon Oct 23 20:23:44 2017 -0400
+
+    Made a misc. character device, a makefile, and a user level program.
+    Need to finish them before I can see if they work but this is just
+    to make sure I can revert back if I end up doing something dumb.
+
+commit 834bd7460ab36edfc7746fc1ceb87155ab36fd52
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Mon Oct 23 13:29:04 2017 -0400
+
+    Yay!!! I found out where to put the module. I realized that you
+    don't need to include it in the makefile or anything, just call
+    insmod on it and it gets installed. It popped up the message in
+    the log when it installed so I know it did it properly.
+    
+    Next step is to implement the read function so that it ouptus the
+    time as specified in the directions.
+
+commit 604964ce2a86d20c0a4a0b4e391739a0d3ddfaf6
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Fri Oct 20 12:01:53 2017 -0400
+
+    Implemented part B using the format defined on the assignment. Some
+    issues occured with compiling at first. Some issue with accessing
+    data with the pointer, had to change it to a reference.
+    
+    Need to make a user level program to test that this actually works
+    properly.
+
+commit f7f4290fdea9e1638defbe1deb1e921c144ca968
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Fri Oct 20 08:53:37 2017 -0400
+
+    I'm not sure exactly what I changed, but it works. I'm not even
+    going to try and figure out why, just take it for granted and
+    continue with partB. It's already late as is, need to get it done
+    so I can start partC.
+
+commit b0465251b00003c2211a9eea3f2f0347714d5f88
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Thu Oct 19 10:09:56 2017 -0400
+
+    Files modified since restoring kernel to original state. Implemented
+    a simple hello world system call. Kernel compiles successfully, but
+    the hello world message does not appear in log file. Not sure how to
+    alter the program to make it work, kind of stuck here.
+    
+    Going to attempt Part C of the assignment and will hopefully make
+    some progress with that. Need to come back to finish Part B.
+
+commit 80b596a96c361b7038c4ab11c78aa502e1db17f9
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Thu Oct 12 11:27:40 2017 -0400
+
+    Compiled kernel. Added modules. Installed modules. Performed make install. Booted into new kernel.
+
+commit 51265933a932955b9f230f574bb5985276821810
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Thu Oct 12 10:41:05 2017 -0400
+
+    Unpacked linux kernel. No not yet compiled. No additonal changes made.
+
+commit 2bc6b7cdbfccc76829de6b92fd0fd5407bbeed82
+Author: csvb <csvb@CS350-ktarcza1.csvb.local>
+Date:   Thu Oct 12 10:35:35 2017 -0400
+
+    Tar file of the linux kernel. Nothing else additional.
+
+commit bddd53ca93fb5af365f6dca1493e572f270132f7
+Author: CrazyWonton <kevintarc13@gmail.com>
+Date:   Thu Oct 12 10:31:59 2017 -0400
+
+    Initial commit
